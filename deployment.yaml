@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rajarshi-app-deployment
+  name: rishi-app-deployment
 spec: # Defines the deployment behavior
   replicas: 3
   selector:
