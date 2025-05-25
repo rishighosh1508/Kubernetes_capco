@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flower-app-deployment
-spec: # Defines the deployment behaiviour
+  name: rajarshi-app-deployment
+spec: # Defines the deployment behavior
   replicas: 3
   selector:
     matchLabels:
@@ -11,16 +11,16 @@ spec: # Defines the deployment behaiviour
     metadata:
       labels:
         app: web
-    spec: # Defines the POD behaiviour
-    containers:
-    - name: cart-app
-      image: muralisocial123/flower-app:1.0
-      resources:
-          limits:
-            memory: "250Mi"
-            cpu: "100m"
-          request: 
-            memory: "128Mi"
-            cpu: "50m"  
-      ports:
-      - containerPort: 3015
+    spec: # Defines the POD behavior
+      containers:
+        - name: rishi-container
+          image: muralisocial123/flower-app:1.0
+          ports:
+            - containerPort: 3015
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "50m"
+            limits:
+              memory: "250Mi"
+              cpu: "100m"
