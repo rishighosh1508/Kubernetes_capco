@@ -6,11 +6,11 @@ spec: # Defines the deployment behavior
   replicas: 3
   selector:
     matchLabels:
-      app: web
+      app: rishi1
   template:
     metadata:
       labels:
-        app: web
+        app: rishi1
     spec: # Defines the POD behavior
       containers:
         - name: rishi-container
@@ -24,3 +24,16 @@ spec: # Defines the deployment behavior
             limits:
               memory: "250Mi"
               cpu: "100m"
+---
+# Writing the service.yaml file to expse the container
+apiVersion: v1
+kind: Service
+metadata:
+  name: rishi-app-svc
+spec:
+  selector:
+    app: rishi1
+  ports:
+  - port: 3016
+    targetPort: 3015
+  type: LoadBalancer
