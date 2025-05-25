@@ -12,15 +12,15 @@ spec: # Defines the deployment behaiviour
       labels:
         app: web
     spec: # Defines the POD behaiviour
-      containers:
-      - name: cart-app
-        image: muralisocial123/flower-app:1.0
-        resources:
+    containers:
+    - name: cart-app
+      image: muralisocial123/flower-app:1.0
+      resources:
           limits:
             memory: "250Mi"
             cpu: "100m"
           request: 
             memory: "128Mi"
             cpu: "50m"  
-        ports:
-        - containerPort: 3015
+      ports:
+      - containerPort: 3015
